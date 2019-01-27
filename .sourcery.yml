@@ -1,0 +1,12 @@
+sources:
+  - Protocols/iOS+tvOS
+  - Protocols/macOS
+  - Protocols/Shared
+  - Samples/iOS+tvOS
+  - Samples/macOS
+templates:
+  - Templates/iOS+tvOS
+  - Templates/macOS
+  - Templates/Shared
+output:
+  Output
