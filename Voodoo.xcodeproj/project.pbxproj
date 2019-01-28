@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18F8827327021199E17D1494 /* Pods_Voodoo_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB79933110CE0C2AEAED9CFF /* Pods_Voodoo_macOS.framework */; };
 		BDB2B41F21FDCBD20046B9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB2B41E21FDCBD20046B9F5 /* AppDelegate.swift */; };
 		BDB2B42121FDCBD40046B9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB2B42021FDCBD40046B9F5 /* Assets.xcassets */; };
 		BDB2B42421FDCBD40046B9F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDB2B42221FDCBD40046B9F5 /* MainMenu.xib */; };
@@ -34,9 +35,17 @@
 		BDF999A621FF748F00B27D30 /* EditorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF999A421FF748F00B27D30 /* EditorialTableViewCell.swift */; };
 		BDF999A921FF74FB00B27D30 /* UITableViewFeature.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF999A821FF74FB00B27D30 /* UITableViewFeature.generated.swift */; };
 		BDF999AA21FF74FB00B27D30 /* UITableViewFeature.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF999A821FF74FB00B27D30 /* UITableViewFeature.generated.swift */; };
+		CC1B2AE367449442FD7C7017 /* Pods_Voodoo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4190A4F34395E2FF2F9303C /* Pods_Voodoo_iOS.framework */; };
+		EB22C6372BE794D321BE7FCD /* Pods_Voodoo_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E46CD2197DEA6C7378A705C /* Pods_Voodoo_tvOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3843E62F6C85BF8D7045D9AA /* Pods-Voodoo-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-macOS/Pods-Voodoo-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		4E46CD2197DEA6C7378A705C /* Pods_Voodoo_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voodoo_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52ED3B6313DB79B49CF1AFB2 /* Pods-Voodoo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-tvOS/Pods-Voodoo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5C0BDD639243AB544CE60D76 /* Pods-Voodoo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-tvOS/Pods-Voodoo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		6C82B1BF9A3B7E90C3A54FC0 /* Pods-Voodoo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BDB2B3FC21FDC8A80046B9F5 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };
 		BDB2B3FE21FDC8E70046B9F5 /* UICollectionViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewFeature.swift; sourceTree = "<group>"; };
 		BDB2B40221FDC9EC0046B9F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -70,6 +79,9 @@
 		BDF999A421FF748F00B27D30 /* EditorialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorialTableViewCell.swift; sourceTree = "<group>"; };
 		BDF999A721FF74E300B27D30 /* UITableViewFeature.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITableViewFeature.stencil; sourceTree = "<group>"; };
 		BDF999A821FF74FB00B27D30 /* UITableViewFeature.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewFeature.generated.swift; sourceTree = "<group>"; };
+		C28C834A47D951FD77EDC663 /* Pods-Voodoo-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-macOS/Pods-Voodoo-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EB79933110CE0C2AEAED9CFF /* Pods_Voodoo_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voodoo_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4190A4F34395E2FF2F9303C /* Pods_Voodoo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voodoo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F8827327021199E17D1494 /* Pods_Voodoo_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1B2AE367449442FD7C7017 /* Pods_Voodoo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +105,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB22C6372BE794D321BE7FCD /* Pods_Voodoo_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32A489EDE791AB99C3B79688 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C82B1BF9A3B7E90C3A54FC0 /* Pods-Voodoo-iOS.debug.xcconfig */,
+				B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */,
+				C28C834A47D951FD77EDC663 /* Pods-Voodoo-macOS.debug.xcconfig */,
+				3843E62F6C85BF8D7045D9AA /* Pods-Voodoo-macOS.release.xcconfig */,
+				52ED3B6313DB79B49CF1AFB2 /* Pods-Voodoo-tvOS.debug.xcconfig */,
+				5C0BDD639243AB544CE60D76 /* Pods-Voodoo-tvOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9329370940FA39BFE7A1FCF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4190A4F34395E2FF2F9303C /* Pods_Voodoo_iOS.framework */,
+				EB79933110CE0C2AEAED9CFF /* Pods_Voodoo_macOS.framework */,
+				4E46CD2197DEA6C7378A705C /* Pods_Voodoo_tvOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BDB2B3E821FDC79A0046B9F5 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +148,8 @@
 				BDB2B43221FDF1AF0046B9F5 /* Voodoo-iOS */,
 				BDB2B44B21FDF2EA0046B9F5 /* Voodoo-tvOS */,
 				BDB2B41C21FDCBD20046B9F5 /* Products */,
+				32A489EDE791AB99C3B79688 /* Pods */,
+				9329370940FA39BFE7A1FCF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,6 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB2B42721FDCBD40046B9F5 /* Build configuration list for PBXNativeTarget "Voodoo-macOS" */;
 			buildPhases = (
+				70DD354527FA3BCB8DD03940 /* [CP] Check Pods Manifest.lock */,
 				BDB2B45C21FDF3630046B9F5 /* Sourcery */,
 				BDB2B41721FDCBD20046B9F5 /* Sources */,
 				BDB2B41821FDCBD20046B9F5 /* Frameworks */,
@@ -289,6 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB2B44021FDF1B00046B9F5 /* Build configuration list for PBXNativeTarget "Voodoo-iOS" */;
 			buildPhases = (
+				47B2A72D0D92869CCBD30A9D /* [CP] Check Pods Manifest.lock */,
 				BDB2B45E21FDF39E0046B9F5 /* Sourcery */,
 				BDB2B42D21FDF1AF0046B9F5 /* Sources */,
 				BDB2B42E21FDF1AF0046B9F5 /* Frameworks */,
@@ -307,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB2B45621FDF2EC0046B9F5 /* Build configuration list for PBXNativeTarget "Voodoo-tvOS" */;
 			buildPhases = (
+				7FD28945E745E919A373EADC /* [CP] Check Pods Manifest.lock */,
 				BDB2B45D21FDF37F0046B9F5 /* Sourcery */,
 				BDB2B44621FDF2EA0046B9F5 /* Sources */,
 				BDB2B44721FDF2EA0046B9F5 /* Frameworks */,
@@ -393,6 +436,72 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47B2A72D0D92869CCBD30A9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voodoo-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70DD354527FA3BCB8DD03940 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voodoo-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FD28945E745E919A373EADC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voodoo-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BDB2B45C21FDF3630046B9F5 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +518,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery\n";
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery\n";
 		};
 		BDB2B45D21FDF37F0046B9F5 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -427,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery\n";
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery\n";
 		};
 		BDB2B45E21FDF39E0046B9F5 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -445,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery\n";
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -543,6 +652,7 @@
 		};
 		BDB2B42821FDCBD40046B9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28C834A47D951FD77EDC663 /* Pods-Voodoo-macOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -616,6 +726,7 @@
 		};
 		BDB2B42921FDCBD40046B9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3843E62F6C85BF8D7045D9AA /* Pods-Voodoo-macOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -682,6 +793,7 @@
 		};
 		BDB2B44121FDF1B00046B9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C82B1BF9A3B7E90C3A54FC0 /* Pods-Voodoo-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -754,6 +866,7 @@
 		};
 		BDB2B44221FDF1B00046B9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -820,6 +933,7 @@
 		};
 		BDB2B45721FDF2EC0046B9F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52ED3B6313DB79B49CF1AFB2 /* Pods-Voodoo-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -892,6 +1006,7 @@
 		};
 		BDB2B45821FDF2EC0046B9F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C0BDD639243AB544CE60D76 /* Pods-Voodoo-tvOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
