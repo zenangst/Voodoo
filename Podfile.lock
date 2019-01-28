@@ -2,21 +2,15 @@ PODS:
   - Sourcery (0.15.0)
 
 DEPENDENCIES:
-  - Sourcery (from `https://github.com/krzysztofzablocki/Sourcery.git`, tag `0.15.0`)
+  - Sourcery
 
-EXTERNAL SOURCES:
-  Sourcery:
-    :git: https://github.com/krzysztofzablocki/Sourcery.git
-    :tag: 0.15.0
-
-CHECKOUT OPTIONS:
-  Sourcery:
-    :git: https://github.com/krzysztofzablocki/Sourcery.git
-    :tag: 0.15.0
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Sourcery
 
 SPEC CHECKSUMS:
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
 
-PODFILE CHECKSUM: c08a97021577ac4edb9cec925018f8470eadf274
+PODFILE CHECKSUM: 0c998e5d3b9c76508c2340eff3cbbf7ccf707e6d
 
 COCOAPODS: 1.5.3
