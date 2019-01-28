@@ -1,4 +1,4 @@
-# Voodoo
+![Voodoo logo](https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-header.png?raw=true)
 
 Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) templates to make you do more with less.
 
@@ -7,6 +7,8 @@ Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) tem
 - 📺 tvOS template for generating view controllers (shared with iOS)
 
 ## Description
+
+<img src="https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-icon.png?raw=true" alt="Voodoo Icon" align="right" />
 
 Cocoa development comes with a lot of "boilerplate" which can often slow down progress because of the repetitive chunks of code that we always have to apply to render our data as UI.
 
@@ -93,7 +95,8 @@ One other benefit of generating view controllers with corresponding models is th
 
 ## Author
 
-Christoffer Winterkvist, christoffer@winterkvist.com
+Christoffer Winterkvist, [@zenangst](https://github.com/zenangst)
+Markus Halvorsen, [@MarkusHalvorsen](https://twitter.com/MarkusHalvorsen)
 
 ## Contributing
 
