@@ -1,0 +1,13 @@
+osx_image: xcode10
+language: objective-c
+
+script:
+  - set -o pipefail && xcodebuild -workspace Voodoo.xcworkspace -scheme "Voodoo-macOS" -sdk macosx clean build | xcpretty
+  - set -o pipefail && xcodebuild -workspace Voodoo.xcworkspace -scheme "Voodoo-iOS" -sdk iphonesimulator -destination name="iPhone 8" clean build | xcpretty
+  - set -o pipefail && xcodebuild -workspace Voodoo.xcworkspace -scheme "Voodoo-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV,OS=11.4' clean build | xcpretty
+
+before_install:
+  - pod update Sourcery
+
+notifications:
+  email: false
