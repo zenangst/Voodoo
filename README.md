@@ -1,4 +1,4 @@
-![Voodoo logo](https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-header.png?raw=true)
+![Voodoo logo](https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-header_v2.png?raw=true)
 
 Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) templates to make you do more with less.
 
@@ -8,7 +8,7 @@ Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) tem
 
 ## Description
 
-<img src="https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-icon.png?raw=true" alt="Voodoo Icon" align="right" />
+<img src="https://github.com/zenangst/Voodoo/blob/master/Images/Voodoo-icon_v2.png?raw=true" alt="Voodoo Icon" align="right" />
 
 Cocoa development comes with a lot of "boilerplate" which can often slow down progress because of the repetitive chunks of code that we always have to apply to render our data as UI.
 
