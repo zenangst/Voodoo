@@ -6,8 +6,5 @@ script:
   - set -o pipefail && xcodebuild -project Voodoo.xcworkspace -scheme "Voodoo-iOS" -sdk iphonesimulator -destination name="iPhone 8" clean build | xcpretty
   - set -o pipefail && xcodebuild -project Voodoo.xcworkspace -scheme "Voodoo-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV,OS=11.4' clean build | xcpretty
 
-before_install:
-  - pod repo update
-
 notifications:
   email: false
