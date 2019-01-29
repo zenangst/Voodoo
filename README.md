@@ -95,8 +95,8 @@ One other benefit of generating view controllers with corresponding models is th
 
 ## Author
 
-Christoffer Winterkvist, [@zenangst](https://github.com/zenangst)
-Markus Halvorsen, [@MarkusHalvorsen](https://twitter.com/MarkusHalvorsen)
+- Christoffer Winterkvist, [@zenangst](https://github.com/zenangst)
+- Markus Halvorsen, [@MarkusHalvorsen](https://twitter.com/MarkusHalvorsen)
 
 ## Contributing
 
