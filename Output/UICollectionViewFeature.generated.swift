@@ -6,7 +6,7 @@ import UIKit
 class EditorialViewController: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView
-  private let dataSource = EditorialViewDataSource()
+  private let dataSource = EditorialDataSource()
 
   init(layout: UICollectionViewFlowLayout, collectionView: UICollectionView?) {
     self.layout = layout
@@ -22,6 +22,8 @@ class EditorialViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - View lifecycle
+
   override func loadView() {
     self.view = collectionView
   }
@@ -33,7 +35,7 @@ class EditorialViewController: UIViewController {
   }
 }
 
-class EditorialViewDataSource: NSObject, UICollectionViewDataSource {
+class EditorialDataSource: NSObject, UICollectionViewDataSource {
 
   private var models = [EditorialViewModel]()
 
@@ -41,6 +43,8 @@ class EditorialViewDataSource: NSObject, UICollectionViewDataSource {
     self.models = models
     super.init()
   }
+
+  // MARK: - Public API
 
   func model(at indexPath: IndexPath) -> EditorialViewModel {
     return models[indexPath.item]
@@ -51,6 +55,8 @@ class EditorialViewDataSource: NSObject, UICollectionViewDataSource {
     self.models = models
     collectionView.reloadData()
   }
+
+  // MARK: - UICollectionViewDataSource
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return models.count

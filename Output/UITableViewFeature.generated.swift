@@ -3,9 +3,9 @@
 
 import UIKit
 
-class EditorialTableViewCellController: UIViewController {
+class EditorialTableViewController: UIViewController {
   private let tableView: UITableView
-  private let dataSource = EditorialTableViewCellDataSource()
+  private let dataSource = EditorialTableViewDataSource()
 
   init(tableView: UITableView?) {
     if let tableView = tableView {
@@ -33,7 +33,7 @@ class EditorialTableViewCellController: UIViewController {
   }
 }
 
-class EditorialTableViewCellDataSource: NSObject, UITableViewDataSource {
+class EditorialTableViewDataSource: NSObject, UITableViewDataSource {
   private var models = [EditorialTableViewCellModel]()
 
   init(models: [EditorialTableViewCellModel] = []) {

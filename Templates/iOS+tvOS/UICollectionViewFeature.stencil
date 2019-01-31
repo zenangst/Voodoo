@@ -4,7 +4,7 @@ import UIKit
 class {{type.name}}Controller: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView
-  private let dataSource = {{type.name}}DataSource()
+  private let dataSource = {{type.name|replace:"View",""}}DataSource()
 
   init(layout: UICollectionViewFlowLayout, collectionView: UICollectionView?) {
     self.layout = layout
@@ -20,6 +20,8 @@ class {{type.name}}Controller: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - View lifecycle
+
   override func loadView() {
     self.view = collectionView
   }
@@ -31,7 +33,7 @@ class {{type.name}}Controller: UIViewController {
   }
 }
 
-class {{type.name}}DataSource: NSObject, UICollectionViewDataSource {
+class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataSource {
 
   private var models = [{{type.name}}Model]()
 
@@ -39,6 +41,8 @@ class {{type.name}}DataSource: NSObject, UICollectionViewDataSource {
     self.models = models
     super.init()
   }
+
+  // MARK: - Public API
 
   func model(at indexPath: IndexPath) -> {{type.name}}Model {
     return models[indexPath.item]
@@ -49,6 +53,8 @@ class {{type.name}}DataSource: NSObject, UICollectionViewDataSource {
     self.models = models
     collectionView.reloadData()
   }
+
+  // MARK: - UICollectionViewDataSource
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return models.count

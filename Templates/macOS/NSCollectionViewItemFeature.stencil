@@ -1,10 +1,10 @@
 import Cocoa
 
 {% for type in types.implementing.NSCollectionViewItemFeature %}
-class {{type.name}}Controller: NSViewController {
+class {{type.name|replace:"View",""}}ViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView
-  private let dataSource = {{type.name}}DataSource()
+  private let dataSource = {{type.name|replace:"View",""}}DataSource()
 
   init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView?) {
     self.layout = layout
@@ -21,6 +21,8 @@ class {{type.name}}Controller: NSViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - View lifecycle
+
   override func loadView() {
     self.view = collectionView
   }
@@ -33,7 +35,7 @@ class {{type.name}}Controller: NSViewController {
   }
 }
 
-class {{type.name}}DataSource: NSObject, NSCollectionViewDataSource {
+class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataSource {
 
   private var models = [{{type.name}}Model]()
 
@@ -41,6 +43,8 @@ class {{type.name}}DataSource: NSObject, NSCollectionViewDataSource {
     self.models = models
     super.init()
   }
+
+  // MARK: - Public API
 
   func model(at indexPath: IndexPath) -> {{type.name}}Model {
     return models[indexPath.item]
@@ -51,6 +55,8 @@ class {{type.name}}DataSource: NSObject, NSCollectionViewDataSource {
     self.models = models
     collectionView.reloadData()
   }
+
+  // MARK: - NSCollectionViewDataSource
 
   func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
     return models.count
