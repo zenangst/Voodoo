@@ -1,9 +1,9 @@
 import UIKit
 
 {% for type in types.implementing.UITableViewFeature %}
-class {{type.name}}Controller: UIViewController {
+class {{type.name|replace:"View",""|replace:"Cell",""}}ViewController: UIViewController {
   private let tableView: UITableView
-  private let dataSource = {{type.name}}DataSource()
+  private let dataSource = {{type.name|replace:"Cell",""|replace:"Cell",""}}DataSource()
 
   init(tableView: UITableView?) {
     if let tableView = tableView {
@@ -31,7 +31,7 @@ class {{type.name}}Controller: UIViewController {
   }
 }
 
-class {{type.name}}DataSource: NSObject, UITableViewDataSource {
+class {{type.name|replace:"Cell",""}}DataSource: NSObject, UITableViewDataSource {
   private var models = [{{type.name}}Model]()
 
   init(models: [{{type.name}}Model] = []) {
