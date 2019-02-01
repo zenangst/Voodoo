@@ -13,16 +13,16 @@ enum {{type.name}}State {
 }
 
 class {{type.name}}StateController: UIViewController {
-  typealias ErrorViewController = {{type.name|replace:"View",""}}ErrorViewController & UIViewController
+  typealias ErrorViewControllerType = {{type.name|replace:"View",""}}ErrorViewController & UIViewController
 
   private let initialViewController: UIViewController
   private let loadingViewController: UIViewController
-  private let failureViewController: ErrorViewController
+  private let failureViewController: ErrorViewControllerType
   private let successController: {{type.name}}Controller
 
-  init(initialViewController: UIViewController,
+  public init(initialViewController: UIViewController,
        loadingViewController: UIViewController,
-       failureViewController: ErrorViewController,
+       failureViewController: ErrorViewControllerType,
        successController: {{type.name}}Controller) {
     self.initialViewController = initialViewController
     self.loadingViewController = loadingViewController
