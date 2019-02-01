@@ -1,6 +1,27 @@
 import UIKit
 
 class ViewControllerFactory {
+  {% for type in types.implementing.UITableViewFeature %}
+  public func create{{type.name|replace:"Cell",""}}StateController(initialViewController: UIViewController = .init(),
+                                          loadingViewController: UIViewController = .init(),
+                                          failureViewController: {{type.name}}StateController.ErrorViewControllerType) -> {{type.name}}StateController {
+    let viewController = create{{type.name|replace:"View",""|replace:"Cell",""}}ViewController()
+    let stateController = {{type.name}}StateController(
+      initialViewController: initialViewController,
+      loadingViewController: loadingViewController,
+      failureViewController: failureViewController,
+      successController: viewController
+    )
+
+    return stateController
+  }
+
+  public func create{{type.name|replace:"View",""|replace:"Cell",""}}ViewController() -> {{type.name|replace:"View",""|replace:"Cell",""}}ViewController {
+    let viewController = {{type.name|replace:"View",""|replace:"Cell",""}}ViewController()
+    return viewController
+  }
+  {% endfor %}
+
   {% for type in types.implementing.UICollectionViewFeature %}
   public func create{{type.name}}StateController(layout: UICollectionViewFlowLayout,
                                           initialViewController: UIViewController = .init(),

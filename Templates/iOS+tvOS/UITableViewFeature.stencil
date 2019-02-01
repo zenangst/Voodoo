@@ -5,7 +5,7 @@ class {{type.name|replace:"View",""|replace:"Cell",""}}ViewController: UIViewCon
   private let tableView: UITableView
   private let dataSource = {{type.name|replace:"Cell",""|replace:"Cell",""}}DataSource()
 
-  init(tableView: UITableView?) {
+  init(tableView: UITableView? = nil) {
     if let tableView = tableView {
       self.tableView = tableView
     } else {
