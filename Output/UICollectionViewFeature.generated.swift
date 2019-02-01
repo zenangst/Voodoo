@@ -3,6 +3,7 @@
 
 import UIKit
 
+
 class EditorialViewController: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView
@@ -32,6 +33,10 @@ class EditorialViewController: UIViewController {
     super.viewDidLoad()
     collectionView.dataSource = dataSource
     collectionView.register(EditorialView.self, forCellWithReuseIdentifier: "EditorialView")
+  }
+
+  func reload(with models: [EditorialViewModel]) {
+    dataSource.reload(collectionView, with: models)
   }
 }
 

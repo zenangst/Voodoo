@@ -1,6 +1,7 @@
 import Cocoa
 
 {% for type in types.implementing.NSCollectionViewItemFeature %}
+
 class {{type.name|replace:"View",""}}ViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView
@@ -32,6 +33,12 @@ class {{type.name|replace:"View",""}}ViewController: NSViewController {
     collectionView.dataSource = dataSource
     let identifier = NSUserInterfaceItemIdentifier.init("{{type.name}}")
     collectionView.register({{type.name}}.self, forItemWithIdentifier: identifier)
+  }
+
+  // MARK: - Public API
+
+  func reload(with models: [{{type.name}}Model]) {
+    dataSource.reload(collectionView, with: models)
   }
 }
 

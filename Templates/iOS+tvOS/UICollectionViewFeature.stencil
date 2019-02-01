@@ -1,6 +1,7 @@
 import UIKit
 
 {% for type in types.implementing.UICollectionViewFeature %}
+
 class {{type.name}}Controller: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView
@@ -30,6 +31,10 @@ class {{type.name}}Controller: UIViewController {
     super.viewDidLoad()
     collectionView.dataSource = dataSource
     collectionView.register({{type.name}}.self, forCellWithReuseIdentifier: "{{type.name}}")
+  }
+
+  func reload(with models: [{{type.name}}Model]) {
+    dataSource.reload(collectionView, with: models)
   }
 }
 

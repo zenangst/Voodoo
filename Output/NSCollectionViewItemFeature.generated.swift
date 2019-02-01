@@ -3,6 +3,7 @@
 
 import Cocoa
 
+
 class EditorialMacOSViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView
@@ -34,6 +35,12 @@ class EditorialMacOSViewController: NSViewController {
     collectionView.dataSource = dataSource
     let identifier = NSUserInterfaceItemIdentifier.init("EditorialMacOSView")
     collectionView.register(EditorialMacOSView.self, forItemWithIdentifier: identifier)
+  }
+
+  // MARK: - Public API
+
+  func reload(with models: [EditorialMacOSViewModel]) {
+    dataSource.reload(collectionView, with: models)
   }
 }
 
