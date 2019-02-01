@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 protocol EditorialErrorViewController : class {
   var error: Error { set get }
 }

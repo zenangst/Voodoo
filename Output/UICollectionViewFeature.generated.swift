@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 class EditorialViewController: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView

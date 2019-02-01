@@ -1,7 +1,6 @@
 import UIKit
 
 {% for type in types.implementing.UICollectionViewFeature %}
-
 class {{type.name}}Controller: UIViewController {
   private let layout: UICollectionViewFlowLayout
   private let collectionView: UICollectionView
