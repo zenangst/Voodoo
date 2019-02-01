@@ -7,7 +7,7 @@ class EditorialTableViewController: UIViewController {
   private let tableView: UITableView
   private let dataSource = EditorialTableViewDataSource()
 
-  init(tableView: UITableView?) {
+  init(tableView: UITableView? = nil) {
     if let tableView = tableView {
       self.tableView = tableView
     } else {

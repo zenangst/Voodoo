@@ -4,6 +4,25 @@
 import UIKit
 
 class ViewControllerFactory {
+  public func createEditorialTableViewStateController(initialViewController: UIViewController = .init(),
+                                          loadingViewController: UIViewController = .init(),
+                                          failureViewController: EditorialTableViewCellStateController.ErrorViewControllerType) -> EditorialTableViewCellStateController {
+    let viewController = createEditorialTableViewController()
+    let stateController = EditorialTableViewCellStateController(
+      initialViewController: initialViewController,
+      loadingViewController: loadingViewController,
+      failureViewController: failureViewController,
+      successController: viewController
+    )
+
+    return stateController
+  }
+
+  public func createEditorialTableViewController() -> EditorialTableViewController {
+    let viewController = EditorialTableViewController()
+    return viewController
+  }
+
   public func createEditorialViewStateController(layout: UICollectionViewFlowLayout,
                                           initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),
