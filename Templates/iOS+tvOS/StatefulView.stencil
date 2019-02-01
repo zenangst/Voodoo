@@ -1,6 +1,6 @@
 import UIKit
 
-{% for type in types.implementing.StatefulViewController %}
+{% for type in types.implementing.StatefulView %}
 
 protocol {{type.name|replace:"View",""}}ErrorViewController : class {
   var error: Error { set get }

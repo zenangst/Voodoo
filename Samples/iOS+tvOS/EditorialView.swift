@@ -1,6 +1,6 @@
 import UIKit
 
-class EditorialView: UICollectionViewCell, UICollectionViewFeature, StatefulViewController {
+class EditorialView: UICollectionViewCell, UICollectionViewFeature, StatefulView {
   // sourcery: image: UIImage? = "imageView.image = model.image"
   lazy var imageView = UIImageView()
   // sourcery: title: String = "titleLabel.text = model.title"
