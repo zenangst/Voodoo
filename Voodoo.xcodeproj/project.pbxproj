@@ -57,7 +57,7 @@
 		B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD180CE0220421E4007F95D2 /* StatefulView.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatefulView.stencil; sourceTree = "<group>"; };
 		BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulView.generated.swift; sourceTree = "<group>"; };
-		BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewControllerFactory.stencil; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.stencil; };
+		BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewControllerFactory.stencil; sourceTree = "<group>"; };
 		BD180CEB22047FAD007F95D2 /* ViewControllerFactory.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.generated.swift; sourceTree = "<group>"; };
 		BDADEDE82203A85E00AD5C68 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		BDB2B3FC21FDC8A80046B9F5 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };

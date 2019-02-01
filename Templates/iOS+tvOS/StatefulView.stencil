@@ -18,12 +18,12 @@ class {{type.name}}StateController: UIViewController {
   private let initialViewController: UIViewController
   private let loadingViewController: UIViewController
   private let failureViewController: ErrorViewControllerType
-  private let successController: {{type.name}}Controller
+  private let successController: {{type.name|replace:"Cell",""}}Controller
 
   public init(initialViewController: UIViewController,
        loadingViewController: UIViewController,
        failureViewController: ErrorViewControllerType,
-       successController: {{type.name}}Controller) {
+       successController: {{type.name|replace:"Cell",""}}Controller) {
     self.initialViewController = initialViewController
     self.loadingViewController = loadingViewController
     self.failureViewController = failureViewController
@@ -59,4 +59,5 @@ class {{type.name}}StateController: UIViewController {
     viewController.didMove(toParent: self)
   }
 }
+
 {% endfor %}
