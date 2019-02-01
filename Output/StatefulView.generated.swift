@@ -11,8 +11,8 @@ protocol EditorialErrorViewController : class {
 enum EditorialViewState {
   case empty
   case loading
-  case failure(Error)
-  case displaying(models: [EditorialViewModel])
+  case failure(error: Error)
+  case success(models: [EditorialViewModel])
 }
 
 class EditorialViewStateController: UIViewController {
@@ -51,7 +51,7 @@ class EditorialViewStateController: UIViewController {
     case .failure(let error):
       viewController = failureViewController
       failureViewController.error = error
-    case .displaying(let models):
+    case .success(let models):
       viewController = successController
       successController.reload(with: models)
     }
