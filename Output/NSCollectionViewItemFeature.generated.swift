@@ -3,7 +3,6 @@
 
 import Cocoa
 
-
 class EditorialMacOSViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView

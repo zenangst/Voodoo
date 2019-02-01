@@ -1,7 +1,6 @@
 import Cocoa
 
 {% for type in types.implementing.NSCollectionViewItemFeature %}
-
 class {{type.name|replace:"View",""}}ViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView
