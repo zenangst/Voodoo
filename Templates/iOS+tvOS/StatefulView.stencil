@@ -6,7 +6,7 @@ protocol {{type.name|replace:"View",""}}ErrorViewController : class {
 }
 
 enum {{type.name}}State {
-  case empty
+  case initial
   case loading
   case failure(error: Error)
   case success(models: [{{type.name}}Model])
@@ -15,16 +15,16 @@ enum {{type.name}}State {
 class {{type.name}}StateController: UIViewController {
   typealias ErrorViewController = {{type.name|replace:"View",""}}ErrorViewController & UIViewController
 
-  private let emptyViewController: UIViewController
+  private let initialViewController: UIViewController
   private let loadingViewController: UIViewController
   private let failureViewController: ErrorViewController
   private let successController: {{type.name}}Controller
 
-  init(emptyViewController: UIViewController,
+  init(initialViewController: UIViewController,
        loadingViewController: UIViewController,
        failureViewController: ErrorViewController,
        successController: {{type.name}}Controller) {
-    self.emptyViewController = emptyViewController
+    self.initialViewController = initialViewController
     self.loadingViewController = loadingViewController
     self.failureViewController = failureViewController
     self.successController = successController
@@ -41,8 +41,8 @@ class {{type.name}}StateController: UIViewController {
     }
     let viewController: UIViewController
     switch state {
-    case .empty:
-      viewController = emptyViewController
+    case .initial:
+      viewController = initialViewController
     case .loading:
       viewController = loadingViewController
     case .failure(let error):

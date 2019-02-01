@@ -8,7 +8,7 @@ protocol EditorialErrorViewController : class {
 }
 
 enum EditorialViewState {
-  case empty
+  case initial
   case loading
   case failure(error: Error)
   case success(models: [EditorialViewModel])
@@ -17,16 +17,16 @@ enum EditorialViewState {
 class EditorialViewStateController: UIViewController {
   typealias ErrorViewController = EditorialErrorViewController & UIViewController
 
-  private let emptyViewController: UIViewController
+  private let initialViewController: UIViewController
   private let loadingViewController: UIViewController
   private let failureViewController: ErrorViewController
   private let successController: EditorialViewController
 
-  init(emptyViewController: UIViewController,
+  init(initialViewController: UIViewController,
        loadingViewController: UIViewController,
        failureViewController: ErrorViewController,
        successController: EditorialViewController) {
-    self.emptyViewController = emptyViewController
+    self.initialViewController = initialViewController
     self.loadingViewController = loadingViewController
     self.failureViewController = failureViewController
     self.successController = successController
@@ -43,8 +43,8 @@ class EditorialViewStateController: UIViewController {
     }
     let viewController: UIViewController
     switch state {
-    case .empty:
-      viewController = emptyViewController
+    case .initial:
+      viewController = initialViewController
     case .loading:
       viewController = loadingViewController
     case .failure(let error):
