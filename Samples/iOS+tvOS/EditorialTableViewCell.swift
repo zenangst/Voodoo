@@ -1,6 +1,6 @@
 import UIKit
 
-class EditorialTableViewCell: UITableViewCell, UITableViewFeature {
+class EditorialTableViewCell: UITableViewCell, UITableViewFeature, StatefulView {
   // sourcery: image: UIImage? = "posterView.image = model.image"
   lazy var posterView = UIImageView()
   // sourcery: title: String = "titleLabel.text = model.title"

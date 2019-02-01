@@ -31,6 +31,12 @@ class EditorialTableViewController: UIViewController {
     tableView.dataSource = dataSource
     tableView.register(EditorialTableViewCell.self, forCellReuseIdentifier: "EditorialTableViewCell")
   }
+
+  // MARK: - Public API
+
+  func reload(with models: [EditorialTableViewCellModel]) {
+    dataSource.reload(tableView, with: models)
+  }
 }
 
 class EditorialTableViewDataSource: NSObject, UITableViewDataSource {

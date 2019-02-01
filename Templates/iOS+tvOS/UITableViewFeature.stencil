@@ -29,6 +29,12 @@ class {{type.name|replace:"View",""|replace:"Cell",""}}ViewController: UIViewCon
     tableView.dataSource = dataSource
     tableView.register({{type.name}}.self, forCellReuseIdentifier: "{{type.name}}")
   }
+
+  // MARK: - Public API
+
+  func reload(with models: [{{type.name}}Model]) {
+    dataSource.reload(tableView, with: models)
+  }
 }
 
 class {{type.name|replace:"Cell",""}}DataSource: NSObject, UITableViewDataSource {
