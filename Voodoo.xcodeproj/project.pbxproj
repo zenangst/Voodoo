@@ -11,6 +11,10 @@
 		BD180CE1220421E4007F95D2 /* StatefulView.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BD180CE0220421E4007F95D2 /* StatefulView.stencil */; };
 		BD180CE6220447E8007F95D2 /* StatefulView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */; };
 		BD180CE7220447E8007F95D2 /* StatefulView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */; };
+		BD180CE922047F89007F95D2 /* ViewControllerFactory.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */; };
+		BD180CEA22047F89007F95D2 /* ViewControllerFactory.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */; };
+		BD180CEC22047FAD007F95D2 /* ViewControllerFactory.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CEB22047FAD007F95D2 /* ViewControllerFactory.generated.swift */; };
+		BD180CED22047FAD007F95D2 /* ViewControllerFactory.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CEB22047FAD007F95D2 /* ViewControllerFactory.generated.swift */; };
 		BDADEDEA2203A85E00AD5C68 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADEDE82203A85E00AD5C68 /* StatefulView.swift */; };
 		BDADEDEB2203A85E00AD5C68 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADEDE82203A85E00AD5C68 /* StatefulView.swift */; };
 		BDB2B41F21FDCBD20046B9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB2B41E21FDCBD20046B9F5 /* AppDelegate.swift */; };
@@ -53,6 +57,8 @@
 		B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD180CE0220421E4007F95D2 /* StatefulView.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatefulView.stencil; sourceTree = "<group>"; };
 		BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulView.generated.swift; sourceTree = "<group>"; };
+		BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewControllerFactory.stencil; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.stencil; };
+		BD180CEB22047FAD007F95D2 /* ViewControllerFactory.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.generated.swift; sourceTree = "<group>"; };
 		BDADEDE82203A85E00AD5C68 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		BDB2B3FC21FDC8A80046B9F5 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };
 		BDB2B3FE21FDC8E70046B9F5 /* UICollectionViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewFeature.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				BDF999A721FF74E300B27D30 /* UITableViewFeature.stencil */,
 				BDB2B40C21FDC9ED0046B9F5 /* UICollectionViewFeature.stencil */,
 				BD180CE0220421E4007F95D2 /* StatefulView.stencil */,
+				BD180CE822047F89007F95D2 /* ViewControllerFactory.stencil */,
 			);
 			path = "iOS+tvOS";
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 		BDB2B41421FDCB480046B9F5 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				BD180CEB22047FAD007F95D2 /* ViewControllerFactory.generated.swift */,
 				BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */,
 				BDB2B45F21FDF5CA0046B9F5 /* NSCollectionViewItemFeature.generated.swift */,
 				BDB2B46021FDF5CA0046B9F5 /* UICollectionViewFeature.generated.swift */,
@@ -432,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD180CE922047F89007F95D2 /* ViewControllerFactory.stencil in Resources */,
 				BDB2B43E21FDF1B00046B9F5 /* LaunchScreen.storyboard in Resources */,
 				BDB2B43B21FDF1B00046B9F5 /* Assets.xcassets in Resources */,
 				BDB2B43921FDF1AF0046B9F5 /* Main.storyboard in Resources */,
@@ -443,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB2B45421FDF2EC0046B9F5 /* Assets.xcassets in Resources */,
+				BD180CEA22047F89007F95D2 /* ViewControllerFactory.stencil in Resources */,
 				BDB2B45221FDF2EA0046B9F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +605,7 @@
 				BDADEDEA2203A85E00AD5C68 /* StatefulView.swift in Sources */,
 				BDB2B44321FDF1CD0046B9F5 /* UICollectionViewFeature.swift in Sources */,
 				BDB2B46221FDF5E00046B9F5 /* UICollectionViewFeature.generated.swift in Sources */,
+				BD180CEC22047FAD007F95D2 /* ViewControllerFactory.generated.swift in Sources */,
 				BD180CE6220447E8007F95D2 /* StatefulView.generated.swift in Sources */,
 				BDF999A521FF748F00B27D30 /* EditorialTableViewCell.swift in Sources */,
 				BDB2B44521FDF1D90046B9F5 /* EditorialView.swift in Sources */,
@@ -612,6 +623,7 @@
 				BDADEDEB2203A85E00AD5C68 /* StatefulView.swift in Sources */,
 				BDB2B44D21FDF2EA0046B9F5 /* AppDelegate.swift in Sources */,
 				BDB2B46321FDF5E00046B9F5 /* UICollectionViewFeature.generated.swift in Sources */,
+				BD180CED22047FAD007F95D2 /* ViewControllerFactory.generated.swift in Sources */,
 				BD180CE7220447E8007F95D2 /* StatefulView.generated.swift in Sources */,
 				BDF999A621FF748F00B27D30 /* EditorialTableViewCell.swift in Sources */,
 				BDB2B45B21FDF3000046B9F5 /* EditorialView.swift in Sources */,

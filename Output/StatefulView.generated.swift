@@ -15,16 +15,16 @@ enum EditorialViewState {
 }
 
 class EditorialViewStateController: UIViewController {
-  typealias ErrorViewController = EditorialErrorViewController & UIViewController
+  typealias ErrorViewControllerType = EditorialErrorViewController & UIViewController
 
   private let initialViewController: UIViewController
   private let loadingViewController: UIViewController
-  private let failureViewController: ErrorViewController
+  private let failureViewController: ErrorViewControllerType
   private let successController: EditorialViewController
 
-  init(initialViewController: UIViewController,
+  public init(initialViewController: UIViewController,
        loadingViewController: UIViewController,
-       failureViewController: ErrorViewController,
+       failureViewController: ErrorViewControllerType,
        successController: EditorialViewController) {
     self.initialViewController = initialViewController
     self.loadingViewController = loadingViewController
