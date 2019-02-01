@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		18F8827327021199E17D1494 /* Pods_Voodoo_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB79933110CE0C2AEAED9CFF /* Pods_Voodoo_macOS.framework */; };
+		BD180CE1220421E4007F95D2 /* StatefulView.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BD180CE0220421E4007F95D2 /* StatefulView.stencil */; };
+		BD180CE6220447E8007F95D2 /* StatefulView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */; };
+		BD180CE7220447E8007F95D2 /* StatefulView.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */; };
+		BDADEDEA2203A85E00AD5C68 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADEDE82203A85E00AD5C68 /* StatefulView.swift */; };
+		BDADEDEB2203A85E00AD5C68 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADEDE82203A85E00AD5C68 /* StatefulView.swift */; };
 		BDB2B41F21FDCBD20046B9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB2B41E21FDCBD20046B9F5 /* AppDelegate.swift */; };
 		BDB2B42121FDCBD40046B9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB2B42021FDCBD40046B9F5 /* Assets.xcassets */; };
 		BDB2B42421FDCBD40046B9F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDB2B42221FDCBD40046B9F5 /* MainMenu.xib */; };
@@ -46,6 +51,9 @@
 		5C0BDD639243AB544CE60D76 /* Pods-Voodoo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-tvOS/Pods-Voodoo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		6C82B1BF9A3B7E90C3A54FC0 /* Pods-Voodoo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8EEAB1AF68BEC5A777D3953 /* Pods-Voodoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voodoo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voodoo-iOS/Pods-Voodoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BD180CE0220421E4007F95D2 /* StatefulView.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatefulView.stencil; sourceTree = "<group>"; };
+		BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulView.generated.swift; sourceTree = "<group>"; };
+		BDADEDE82203A85E00AD5C68 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		BDB2B3FC21FDC8A80046B9F5 /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sourcery.yml; sourceTree = "<group>"; };
 		BDB2B3FE21FDC8E70046B9F5 /* UICollectionViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewFeature.swift; sourceTree = "<group>"; };
 		BDB2B40221FDC9EC0046B9F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 		BDB2B3FF21FDC8F20046B9F5 /* iOS+tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				BDADEDE82203A85E00AD5C68 /* StatefulView.swift */,
 				BDB2B3FE21FDC8E70046B9F5 /* UICollectionViewFeature.swift */,
 				BDF999A121FF73F400B27D30 /* UITableViewFeature.swift */,
 			);
@@ -215,6 +224,7 @@
 			children = (
 				BDF999A721FF74E300B27D30 /* UITableViewFeature.stencil */,
 				BDB2B40C21FDC9ED0046B9F5 /* UICollectionViewFeature.stencil */,
+				BD180CE0220421E4007F95D2 /* StatefulView.stencil */,
 			);
 			path = "iOS+tvOS";
 			sourceTree = "<group>";
@@ -238,6 +248,7 @@
 		BDB2B41421FDCB480046B9F5 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				BD180CE5220447E8007F95D2 /* StatefulView.generated.swift */,
 				BDB2B45F21FDF5CA0046B9F5 /* NSCollectionViewItemFeature.generated.swift */,
 				BDB2B46021FDF5CA0046B9F5 /* UICollectionViewFeature.generated.swift */,
 				BDF999A821FF74FB00B27D30 /* UITableViewFeature.generated.swift */,
@@ -412,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB2B42121FDCBD40046B9F5 /* Assets.xcassets in Resources */,
+				BD180CE1220421E4007F95D2 /* StatefulView.stencil in Resources */,
 				BDB2B42421FDCBD40046B9F5 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,8 +592,10 @@
 				BDB2B43621FDF1AF0046B9F5 /* ViewController.swift in Sources */,
 				BDB2B43421FDF1AF0046B9F5 /* AppDelegate.swift in Sources */,
 				BDF999A921FF74FB00B27D30 /* UITableViewFeature.generated.swift in Sources */,
+				BDADEDEA2203A85E00AD5C68 /* StatefulView.swift in Sources */,
 				BDB2B44321FDF1CD0046B9F5 /* UICollectionViewFeature.swift in Sources */,
 				BDB2B46221FDF5E00046B9F5 /* UICollectionViewFeature.generated.swift in Sources */,
+				BD180CE6220447E8007F95D2 /* StatefulView.generated.swift in Sources */,
 				BDF999A521FF748F00B27D30 /* EditorialTableViewCell.swift in Sources */,
 				BDB2B44521FDF1D90046B9F5 /* EditorialView.swift in Sources */,
 			);
@@ -595,8 +609,10 @@
 				BDB2B44F21FDF2EA0046B9F5 /* ViewController.swift in Sources */,
 				BDB2B45A21FDF2FB0046B9F5 /* UICollectionViewFeature.swift in Sources */,
 				BDF999AA21FF74FB00B27D30 /* UITableViewFeature.generated.swift in Sources */,
+				BDADEDEB2203A85E00AD5C68 /* StatefulView.swift in Sources */,
 				BDB2B44D21FDF2EA0046B9F5 /* AppDelegate.swift in Sources */,
 				BDB2B46321FDF5E00046B9F5 /* UICollectionViewFeature.generated.swift in Sources */,
+				BD180CE7220447E8007F95D2 /* StatefulView.generated.swift in Sources */,
 				BDF999A621FF748F00B27D30 /* EditorialTableViewCell.swift in Sources */,
 				BDB2B45B21FDF3000046B9F5 /* EditorialView.swift in Sources */,
 			);

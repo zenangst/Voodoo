@@ -20,6 +20,8 @@ This is where Voodoo comes in, and it aims to help to reduce the amount of code 
 
 ## Usage
 
+### Generating features using views
+
 **Note** the built-in templates are made to provide you with a starting point. You should invest time in taking ownership and making them your own. There are no such things as one size fits all when it comes to code generation at this level.
 
 The idea is to have your views conform to a protocol called `UICollectionViewFeature` which generates the following.
@@ -92,6 +94,76 @@ There is also a different route that can give you some customization options whi
 This would mean that you add your generated view controllers as child view controllers and the container (or any other class) acts as the delegate for the view controller.
 
 One other benefit of generating view controllers with corresponding models is that they can easily be mocked which makes them perfect for rapid development. Think about it, they can be used and displayed on the screen without knowing any additional details about your business logic. They only know how to display the data that you provided with your sourcery annotations. Having domain-specific models makes sure that you are not creating models that carry more weight than they need to, they also but a bandaid on any business logic related scars that may bleed into your feature.
+
+### Generating state controllers
+
+State handling and naming this are probably the two hardest things when it comes to programming (I chose to exclude timezones out of spite). State containment can be handled in many different ways. Voodoo provides a way to generate state controllers for your generated features. By conforming to `StatefulView` on your `UICollectionViewFeature`, a state controller will be generated which has the following states.
+
+- Initial
+- Loading
+- Failure
+- Success
+
+The `.success` state is coupled to the generated feature view controller, taking the user domain model as the argument for the state case.
+
+```swift
+enum EditorialViewState {
+  case initial
+  case loading
+  case failure(error: Error)
+  case success(models: [EditorialViewModel])
+}
+
+class EditorialViewStateController: UIViewController {
+  typealias ErrorViewController = EditorialErrorViewController & UIViewController
+
+  private let initialViewController: UIViewController
+  private let loadingViewController: UIViewController
+  private let failureViewController: ErrorViewController
+  private let successController: EditorialViewController
+
+  init(initialViewController: UIViewController,
+       loadingViewController: UIViewController,
+       failureViewController: ErrorViewController,
+       successController: EditorialViewController) {
+    self.initialViewController = initialViewController
+    self.loadingViewController = loadingViewController
+    self.failureViewController = failureViewController
+    self.successController = successController
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  private func render(_ state: EditorialViewState) {
+    children.forEach {
+      $0.removeFromParent()
+    }
+    let viewController: UIViewController
+    switch state {
+    case .initial:
+      viewController = initialViewController
+    case .loading:
+      viewController = loadingViewController
+    case .failure(let error):
+      viewController = failureViewController
+      failureViewController.error = error
+    case .success(let models):
+      viewController = successController
+      successController.reload(with: models)
+    }
+    viewController.willMove(toParent: self)
+    addChild(viewController)
+    viewController.view.frame = view.bounds
+    view.addSubview(viewController.view)
+    viewController.didMove(toParent: self)
+  }
+}
+```
+
+All view controllers except for `successController` are kept as regular view controllers to give you maximum flexibility.
 
 ## Author
 

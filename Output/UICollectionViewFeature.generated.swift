@@ -33,6 +33,10 @@ class EditorialViewController: UIViewController {
     collectionView.dataSource = dataSource
     collectionView.register(EditorialView.self, forCellWithReuseIdentifier: "EditorialView")
   }
+
+  func reload(with models: [EditorialViewModel]) {
+    dataSource.reload(collectionView, with: models)
+  }
 }
 
 class EditorialDataSource: NSObject, UICollectionViewDataSource {

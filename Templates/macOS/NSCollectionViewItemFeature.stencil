@@ -33,6 +33,12 @@ class {{type.name|replace:"View",""}}ViewController: NSViewController {
     let identifier = NSUserInterfaceItemIdentifier.init("{{type.name}}")
     collectionView.register({{type.name}}.self, forItemWithIdentifier: identifier)
   }
+
+  // MARK: - Public API
+
+  func reload(with models: [{{type.name}}Model]) {
+    dataSource.reload(collectionView, with: models)
+  }
 }
 
 class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataSource {

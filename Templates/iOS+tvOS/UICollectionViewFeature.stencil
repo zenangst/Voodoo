@@ -31,6 +31,10 @@ class {{type.name}}Controller: UIViewController {
     collectionView.dataSource = dataSource
     collectionView.register({{type.name}}.self, forCellWithReuseIdentifier: "{{type.name}}")
   }
+
+  func reload(with models: [{{type.name}}Model]) {
+    dataSource.reload(collectionView, with: models)
+  }
 }
 
 class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataSource {

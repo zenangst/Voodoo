@@ -35,6 +35,12 @@ class EditorialMacOSViewController: NSViewController {
     let identifier = NSUserInterfaceItemIdentifier.init("EditorialMacOSView")
     collectionView.register(EditorialMacOSView.self, forItemWithIdentifier: identifier)
   }
+
+  // MARK: - Public API
+
+  func reload(with models: [EditorialMacOSViewModel]) {
+    dataSource.reload(collectionView, with: models)
+  }
 }
 
 class EditorialMacOSDataSource: NSObject, NSCollectionViewDataSource {
