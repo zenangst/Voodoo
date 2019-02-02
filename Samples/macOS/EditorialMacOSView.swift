@@ -1,5 +1,6 @@
 import Cocoa
- 
+
+ // sourcery: navigation = "URL"
 class EditorialMacOSView: NSCollectionViewItem, CollectionViewItemComponent {
   // sourcery: image: NSImage = "customImageView.image = model.image"
   lazy var customImageView = NSImageView()

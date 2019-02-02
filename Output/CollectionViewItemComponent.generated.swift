@@ -89,4 +89,5 @@ struct EditorialMacOSViewModel: Hashable {
   let image: NSImage
   let title: String
   let subtitle: String
+  let navigation: URL
 }

@@ -93,5 +93,8 @@ struct {{type.name}}Model: Hashable {
     {% endfor %}
   {% endfor %}
   {% endfor %}
+  {% for key in type.annotations %}
+  let {{key}}: {{type.annotations[key]}}
+  {% endfor %}
 }
 {% endfor %}

@@ -1,5 +1,6 @@
 import UIKit
 
+// sourcery: navigation = "URL"
 class EditorialTableViewCell: UITableViewCell, TableViewComponent, StatefulView {
   // sourcery: image: UIImage? = "posterView.image = model.image"
   lazy var posterView = UIImageView()
