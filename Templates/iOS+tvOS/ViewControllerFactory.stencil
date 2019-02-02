@@ -1,7 +1,7 @@
 import UIKit
 
 class ViewControllerFactory {
-  {% for type in types.implementing.UITableViewFeature %}
+  {% for type in types.implementing.TableViewComponent %}
   public func create{{type.name|replace:"Cell",""}}StateController(initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),
                                           failureViewController: {{type.name}}StateController.ErrorViewControllerType) -> {{type.name}}StateController {
@@ -22,7 +22,7 @@ class ViewControllerFactory {
   }
   {% endfor %}
 
-  {% for type in types.implementing.UICollectionViewFeature %}
+  {% for type in types.implementing.CollectionViewComponent %}
   public func create{{type.name}}StateController(layout: UICollectionViewFlowLayout,
                                           initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),

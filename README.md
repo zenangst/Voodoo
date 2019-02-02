@@ -24,7 +24,7 @@ This is where Voodoo comes in, and it aims to help to reduce the amount of code 
 
 **Note** the built-in templates are made to provide you with a starting point. You should invest time in taking ownership and making them your own. There are no such things as one size fits all when it comes to code generation at this level.
 
-The idea is to have your views conform to a protocol called `UICollectionViewFeature` which generates the following.
+The idea is to have your views conform to a protocol called `CollectionViewComponent` which generates the following.
 
 - A view controller
 - A data source
@@ -34,7 +34,7 @@ The idea is to have your views conform to a protocol called `UICollectionViewFea
 ```swift
 import UIKit
 
-class EditorialView: UICollectionViewCell, UICollectionViewFeature {
+class EditorialView: UICollectionViewCell, CollectionViewComponent {
   // sourcery: image: UIImage? = "imageView.image = model.image"
   lazy var imageView = UIImageView()
   // sourcery: title: String = "titleLabel.text = model.title"
@@ -97,7 +97,7 @@ One other benefit of generating view controllers with corresponding models is th
 
 ### Generating state controllers
 
-State handling and naming this are probably the two hardest things when it comes to programming (I chose to exclude timezones out of spite). State containment can be handled in many different ways. Voodoo provides a way to generate state controllers for your generated features. By conforming to `StatefulView` on your `UICollectionViewFeature`, a state controller will be generated which has the following states.
+State handling and naming this are probably the two hardest things when it comes to programming (I chose to exclude timezones out of spite). State containment can be handled in many different ways. Voodoo provides a way to generate state controllers for your generated features. By conforming to `StatefulView` on your `CollectionViewComponent`, a state controller will be generated which has the following states.
 
 - Initial
 - Loading

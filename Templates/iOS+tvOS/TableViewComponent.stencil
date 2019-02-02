@@ -1,17 +1,15 @@
 import UIKit
 
-{% for type in types.implementing.UICollectionViewFeature %}
-class {{type.name}}Controller: UIViewController {
-  private let layout: UICollectionViewFlowLayout
-  private let collectionView: UICollectionView
-  private let dataSource = {{type.name|replace:"View",""}}DataSource()
+{% for type in types.implementing.TableViewComponent %}
+class {{type.name|replace:"View",""|replace:"Cell",""}}ViewController: UIViewController {
+  private let tableView: UITableView
+  private let dataSource = {{type.name|replace:"Cell",""|replace:"Cell",""}}DataSource()
 
-  init(layout: UICollectionViewFlowLayout, collectionView: UICollectionView? = nil) {
-    self.layout = layout
-    if let collectionView = collectionView {
-      self.collectionView = collectionView
+  init(tableView: UITableView? = nil) {
+    if let tableView = tableView {
+      self.tableView = tableView
     } else {
-      self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+      self.tableView = UITableView(frame: .zero)
     }
     super.init(nibName: nil, bundle: nil)
   }
@@ -23,22 +21,23 @@ class {{type.name}}Controller: UIViewController {
   // MARK: - View lifecycle
 
   override func loadView() {
-    self.view = collectionView
+    self.view = tableView
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    collectionView.dataSource = dataSource
-    collectionView.register({{type.name}}.self, forCellWithReuseIdentifier: "{{type.name}}")
+    tableView.dataSource = dataSource
+    tableView.register({{type.name}}.self, forCellReuseIdentifier: "{{type.name}}")
   }
 
+  // MARK: - Public API
+
   func reload(with models: [{{type.name}}Model]) {
-    dataSource.reload(collectionView, with: models)
+    dataSource.reload(tableView, with: models)
   }
 }
 
-class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataSource {
-
+class {{type.name|replace:"Cell",""}}DataSource: NSObject, UITableViewDataSource {
   private var models = [{{type.name}}Model]()
 
   init(models: [{{type.name}}Model] = []) {
@@ -52,20 +51,20 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataS
     return models[indexPath.item]
   }
 
-  func reload(_ collectionView: UICollectionView,
+  func reload(_ tableView: UITableView,
               with models: [{{type.name}}Model]) {
     self.models = models
-    collectionView.reloadData()
+    tableView.reloadData()
   }
 
-  // MARK: - UICollectionViewDataSource
+  // MARK: - UITableViewDataSource
 
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return models.count
   }
 
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "{{type.name}}", for: indexPath)
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "{{type.name}}", for: indexPath)
     let model = self.model(at: indexPath)
 
     if let view = cell as? {{type.name}} {
