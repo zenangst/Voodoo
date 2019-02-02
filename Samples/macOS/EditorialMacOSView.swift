@@ -1,6 +1,6 @@
 import Cocoa
  
-class EditorialMacOSView: NSCollectionViewItem, NSCollectionViewItemFeature {
+class EditorialMacOSView: NSCollectionViewItem, CollectionViewItemComponent {
   // sourcery: image: NSImage = "customImageView.image = model.image"
   lazy var customImageView = NSImageView()
   // sourcery: title: String = "titleLabel.stringValue = model.title"

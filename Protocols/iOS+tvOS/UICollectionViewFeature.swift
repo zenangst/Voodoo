@@ -1,3 +1,3 @@
 import UIKit
 
-protocol UICollectionViewFeature where Self : UICollectionViewCell {}
+protocol CollectionViewComponent where Self : UICollectionViewCell {}

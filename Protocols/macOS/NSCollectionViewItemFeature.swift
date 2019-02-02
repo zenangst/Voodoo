@@ -1,3 +1,3 @@
 import Cocoa
 
-protocol NSCollectionViewItemFeature where Self : NSCollectionViewItem {}
+protocol CollectionViewItemComponent where Self : NSCollectionViewItem {}

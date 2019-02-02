@@ -1,3 +1,3 @@
 import UIKit
 
-protocol UITableViewFeature where Self : UITableViewCell {}
+protocol TableViewComponent where Self : UITableViewCell {}
