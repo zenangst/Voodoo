@@ -6,7 +6,7 @@ Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) tem
 |:---|:---:|:---:|:---:|
 | Collection view components  | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/macOS/CollectionViewItemComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/CollectionViewComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/CollectionViewComponent.stencil)
 | Table view components  | ❌ Not supported | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/TableViewComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/TableViewComponent.stencil)
-| State controllers  | 🚜 Coming | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil)
+| State controllers  | [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/macOS/StatefulItem.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil)
 | View controller factory  | 🚜 Coming | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/ViewControllerFactory.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/ViewControllerFactory.stencil)
 
 ## Description
