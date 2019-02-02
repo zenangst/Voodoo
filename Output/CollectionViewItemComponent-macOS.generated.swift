@@ -8,7 +8,7 @@ class EditorialItemViewController: NSViewController {
   private let collectionView: NSCollectionView
   private let dataSource = EditorialItemDataSource()
 
-  init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView?) {
+  init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView? = nil) {
     self.layout = layout
     if let collectionView = collectionView {
       self.collectionView = collectionView
