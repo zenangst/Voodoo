@@ -23,7 +23,7 @@ This is where Voodoo comes in, and it aims to help to reduce the amount of code 
 
 ## Usage
 
-### Generating features using views
+### Generating components using views
 
 **Note** the built-in templates are made to provide you with a starting point. You should invest time in taking ownership and making them your own. There are no such things as one size fits all when it comes to code generation at this level.
 
@@ -84,12 +84,12 @@ class to fetch and display images, we could easily do that across the applicatio
 the sourcery annotation.
 
 By generating code this way, we get a pretty groove side-effect which is dependency containment.
-Changing the annotation and regenerating the feature would instantly swap or remove the dependency
+Changing the annotation and regenerating the component would instantly swap or remove the dependency
 just by hitting build.
 
 So this is all good, but what about customization points? If everything is generated, how can we tailor
 each individual view controller to our application needs. Well, if you see that you view controller is starting
-change direction and is non-generic (not to be confused with Swift generics). You can simply copy the code the generate code out and use that as your start point for your feature. Choosing the best direction
+change direction and is non-generic (not to be confused with Swift generics). You can simply copy the code the generate code out and use that as your start point for your component. Choosing the best direction
 for your app is really up to you, no generator tools can help you there, but generating your starting point
 will save your countless amount of time.
 
@@ -107,7 +107,7 @@ State handling and naming this are probably the two hardest things when it comes
 - Failure
 - Success
 
-The `.success` state is coupled to the generated feature view controller, taking the user domain model as the argument for the state case.
+The `.success` state is coupled to the generated component view controller, taking the user domain model as the argument for the state case.
 
 ```swift
 enum EditorialViewState {
