@@ -2,9 +2,12 @@
 
 Voodoo is a set of [Sourcery](https://github.com/krzysztofzablocki/Sourcery) templates to make you do more with less.
 
-- 💻 macOS template for generating view controllers
-- 📱 iOS template for generating view controllers
-- 📺 tvOS template for generating view controllers (shared with iOS)
+|Feature | macOS | iOS | tvOS |
+|:---|:---:|:---:|:---:|
+| Collection view components  | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/macOS/CollectionViewItemComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/CollectionViewComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/CollectionViewComponent.stencil)
+| Table view components  | ❌ Not supported | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/TableViewComponent.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/TableViewComponent.stencil)
+| State controllers  | 🚜 Coming | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/StatefulView.stencil)
+| View controller factory  | 🚜 Coming | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/ViewControllerFactory.stencil) | ✅ [Template](https://github.com/zenangst/Voodoo/blob/master/Templates/iOS%2BtvOS/ViewControllerFactory.stencil)
 
 ## Description
 
