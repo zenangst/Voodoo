@@ -3,10 +3,10 @@
 
 import Cocoa
 
-class EditorialMacOSViewController: NSViewController {
+class EditorialItemViewController: NSViewController {
   private let layout: NSCollectionViewFlowLayout
   private let collectionView: NSCollectionView
-  private let dataSource = EditorialMacOSDataSource()
+  private let dataSource = EditorialItemDataSource()
 
   init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView?) {
     self.layout = layout
@@ -32,34 +32,34 @@ class EditorialMacOSViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.dataSource = dataSource
-    let identifier = NSUserInterfaceItemIdentifier.init("EditorialMacOSView")
-    collectionView.register(EditorialMacOSView.self, forItemWithIdentifier: identifier)
+    let identifier = NSUserInterfaceItemIdentifier.init("EditorialItem")
+    collectionView.register(EditorialItem.self, forItemWithIdentifier: identifier)
   }
 
   // MARK: - Public API
 
-  func reload(with models: [EditorialMacOSViewModel]) {
+  func reload(with models: [EditorialItemModel]) {
     dataSource.reload(collectionView, with: models)
   }
 }
 
-class EditorialMacOSDataSource: NSObject, NSCollectionViewDataSource {
+class EditorialItemDataSource: NSObject, NSCollectionViewDataSource {
 
-  private var models = [EditorialMacOSViewModel]()
+  private var models = [EditorialItemModel]()
 
-  init(models: [EditorialMacOSViewModel] = []) {
+  init(models: [EditorialItemModel] = []) {
     self.models = models
     super.init()
   }
 
   // MARK: - Public API
 
-  func model(at indexPath: IndexPath) -> EditorialMacOSViewModel {
+  func model(at indexPath: IndexPath) -> EditorialItemModel {
     return models[indexPath.item]
   }
 
   func reload(_ collectionView: NSCollectionView,
-              with models: [EditorialMacOSViewModel]) {
+              with models: [EditorialItemModel]) {
     self.models = models
     collectionView.reloadData()
   }
@@ -71,11 +71,11 @@ class EditorialMacOSDataSource: NSObject, NSCollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    let identifier = NSUserInterfaceItemIdentifier.init("EditorialMacOSView")
+    let identifier = NSUserInterfaceItemIdentifier.init("EditorialItem")
     let item = collectionView.makeItem(withIdentifier: identifier, for: indexPath)
     let model = self.model(at: indexPath)
 
-    if let view = item as? EditorialMacOSView {
+    if let view = item as? EditorialItem {
       view.customImageView.image = model.image
       view.titleLabel.stringValue = model.title
       view.subtitleLabel.stringValue = model.subtitle
@@ -85,7 +85,7 @@ class EditorialMacOSDataSource: NSObject, NSCollectionViewDataSource {
   }
 }
 
-struct EditorialMacOSViewModel: Hashable {
+struct EditorialItemModel: Hashable {
   let image: NSImage
   let title: String
   let subtitle: String
