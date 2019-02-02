@@ -6,7 +6,7 @@ class {{type.name|replace:"View",""}}ViewController: NSViewController {
   private let collectionView: NSCollectionView
   private let dataSource = {{type.name|replace:"View",""}}DataSource()
 
-  init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView?) {
+  init(layout: NSCollectionViewFlowLayout, collectionView: NSCollectionView? = nil) {
     self.layout = layout
     if let collectionView = collectionView {
       self.collectionView = collectionView
