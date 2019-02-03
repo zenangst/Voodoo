@@ -38,11 +38,11 @@ The idea is to have your views conform to a protocol called `CollectionViewCompo
 import UIKit
 
 class EditorialView: UICollectionViewCell, CollectionViewComponent {
-  // sourcery: image: UIImage? = "imageView.image = model.image"
+  // sourcery: let image: UIImage? = "imageView.image = model.image"
   lazy var imageView = UIImageView()
-  // sourcery: title: String = "titleLabel.text = model.title"
+  // sourcery: let title: String = "titleLabel.text = model.title"
   lazy var titleLabel = UILabel()
-  // sourcery: subtitle: String = "subtitleLabel.text = model.subtitle"
+  // sourcery: let subtitle: String = "subtitleLabel.text = model.subtitle"
   lazy var subtitleLabel = UILabel()
 }
 ```
@@ -74,7 +74,7 @@ struct EditorialViewModel: Hashable {
 If we take a closer look at the annotations:
 
 ```
-// sourcery: image: UIImage? = "imageView.image = model.image"
+// sourcery: let image: UIImage? = "imageView.image = model.image"
 ```
 
 The first part which acts as the key for the annotation is used to create the model property.

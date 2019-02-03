@@ -38,8 +38,12 @@ class EditorialItemViewController: NSViewController {
 
   // MARK: - Public API
 
-  func reload(with models: [EditorialItemModel]) {
-    dataSource.reload(collectionView, with: models)
+  func model(at indexPath: IndexPath) -> EditorialItemModel {
+    return dataSource.model(at: indexPath)
+  }
+
+  func reload(with models: [EditorialItemModel], completion: (() -> Void)? = nil) {
+    dataSource.reload(collectionView, with: models, then: completion)
   }
 }
 
@@ -59,9 +63,11 @@ class EditorialItemDataSource: NSObject, NSCollectionViewDataSource {
   }
 
   func reload(_ collectionView: NSCollectionView,
-              with models: [EditorialItemModel]) {
+              with models: [EditorialItemModel],
+              then handler: (() -> Void)? = nil) {
     self.models = models
     collectionView.reloadData()
+    handler?()
   }
 
   // MARK: - NSCollectionViewDataSource
@@ -76,9 +82,9 @@ class EditorialItemDataSource: NSObject, NSCollectionViewDataSource {
     let model = self.model(at: indexPath)
 
     if let view = item as? EditorialItem {
-      view.customImageView.image = model.image
-      view.titleLabel.stringValue = model.title
-      view.subtitleLabel.stringValue = model.subtitle
+          view.customImageView.image = model.image
+          view.titleLabel.stringValue = model.title
+          view.subtitleLabel.stringValue = model.subtitle
     }
 
     return item

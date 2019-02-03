@@ -69,12 +69,14 @@ class {{type.name|replace:"Cell",""}}DataSource: NSObject, UITableViewDataSource
 
     if let view = cell as? {{type.name}} {
       {% for variable in type.variables %}
-      {% for key in variable.annotations %}
-        {% for variableType in variable.annotations[key] %}
-          {% if forloop.last %}
+      {% for key, value in variable.annotations %}
+        {% if value.length > 0 %}
+      view.{{key}} = {{value}}
+        {% else %}
+          {% for variableType in value %}
       view.{{variable.annotations[key][variableType]}}
-          {% endif %}
         {% endfor %}
+        {% endif %}
       {% endfor %}
       {% endfor %}
     }
@@ -85,16 +87,14 @@ class {{type.name|replace:"Cell",""}}DataSource: NSObject, UITableViewDataSource
 
 struct {{type.name}}Model: Hashable {
   {% for variable in type.variables %}
-  {% for key in variable.annotations %}
+  {% for key, value in variable.annotations %}
     {% for variableType in variable.annotations[key] %}
-    {% if forloop.last %}
-  let {{key}}: {{variableType}}
-    {% endif %}
+  {{key}}: {{variableType}}
     {% endfor %}
   {% endfor %}
   {% endfor %}
   {% for key in type.annotations %}
-  let {{key}}: {{type.annotations[key]}}
+  {{key}}: {{type.annotations[key]}}
   {% endfor %}
 }
 {% endfor %}

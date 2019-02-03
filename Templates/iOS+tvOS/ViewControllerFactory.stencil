@@ -2,6 +2,7 @@ import UIKit
 
 class ViewControllerFactory {
   {% for type in types.implementing.TableViewComponent %}
+  {% if type.implements.StatefulView %}
   public func create{{type.name|replace:"Cell",""}}StateController(initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),
                                           failureViewController: {{type.name}}StateController.ErrorViewControllerType) -> {{type.name}}StateController {
@@ -15,14 +16,14 @@ class ViewControllerFactory {
 
     return stateController
   }
-
+  {% endif %}
   public func create{{type.name|replace:"View",""|replace:"Cell",""}}ViewController() -> {{type.name|replace:"View",""|replace:"Cell",""}}ViewController {
     let viewController = {{type.name|replace:"View",""|replace:"Cell",""}}ViewController()
     return viewController
   }
   {% endfor %}
-
   {% for type in types.implementing.CollectionViewComponent %}
+  {% if type.implements.StatefulView %}
   public func create{{type.name}}StateController(layout: UICollectionViewFlowLayout,
                                           initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),
@@ -37,6 +38,7 @@ class ViewControllerFactory {
 
     return stateController
   }
+  {% endif %}
 
   public func create{{type.name|replace:"View",""}}ViewController(layout: UICollectionViewFlowLayout) -> {{type.name|replace:"View",""}}ViewController {
     let viewController = {{type.name|replace:"View",""}}ViewController(layout: layout)

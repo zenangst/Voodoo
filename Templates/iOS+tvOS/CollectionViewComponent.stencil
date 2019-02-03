@@ -32,8 +32,14 @@ class {{type.name}}Controller: UIViewController {
     collectionView.register({{type.name}}.self, forCellWithReuseIdentifier: "{{type.name}}")
   }
 
-  func reload(with models: [{{type.name}}Model]) {
-    dataSource.reload(collectionView, with: models)
+  // MARK: - Public API
+
+  func model(at indexPath: IndexPath) -> {{type.name}}Model {
+    return dataSource.model(at: indexPath)
+  }
+
+  func reload(with models: [{{type.name}}Model], completion: (() -> Void)? = nil) {
+    dataSource.reload(collectionView, with: models, then: completion)
   }
 }
 
@@ -53,9 +59,11 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataS
   }
 
   func reload(_ collectionView: UICollectionView,
-              with models: [{{type.name}}Model]) {
+              with models: [{{type.name}}Model],
+              then handler: (() -> Void)? = nil) {
     self.models = models
     collectionView.reloadData()
+    handler?()
   }
 
   // MARK: - UICollectionViewDataSource
@@ -70,12 +78,14 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataS
 
     if let view = cell as? {{type.name}} {
       {% for variable in type.variables %}
-      {% for key in variable.annotations %}
-        {% for variableType in variable.annotations[key] %}
-          {% if forloop.last %}
+      {% for key, value in variable.annotations %}
+        {% if value.length > 0 %}
+      view.{{key}} = {{value}}
+        {% else %}
+          {% for variableType in value %}
       view.{{variable.annotations[key][variableType]}}
-          {% endif %}
         {% endfor %}
+        {% endif %}
       {% endfor %}
       {% endfor %}
     }
@@ -86,16 +96,14 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, UICollectionViewDataS
 
 struct {{type.name}}Model: Hashable {
   {% for variable in type.variables %}
-  {% for key in variable.annotations %}
+  {% for key, value in variable.annotations %}
     {% for variableType in variable.annotations[key] %}
-    {% if forloop.last %}
-  let {{key}}: {{variableType}}
-    {% endif %}
+  {{key}}: {{variableType}}
     {% endfor %}
   {% endfor %}
   {% endfor %}
   {% for key in type.annotations %}
-  let {{key}}: {{type.annotations[key]}}
+  {{key}}: {{type.annotations[key]}}
   {% endfor %}
 }
 {% endfor %}

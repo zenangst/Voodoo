@@ -36,8 +36,12 @@ class {{type.name|replace:"View",""}}ViewController: NSViewController {
 
   // MARK: - Public API
 
-  func reload(with models: [{{type.name}}Model]) {
-    dataSource.reload(collectionView, with: models)
+  func model(at indexPath: IndexPath) -> {{type.name}}Model {
+    return dataSource.model(at: indexPath)
+  }
+
+  func reload(with models: [{{type.name}}Model], completion: (() -> Void)? = nil) {
+    dataSource.reload(collectionView, with: models, then: completion)
   }
 }
 
@@ -57,9 +61,11 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataS
   }
 
   func reload(_ collectionView: NSCollectionView,
-              with models: [{{type.name}}Model]) {
+              with models: [{{type.name}}Model],
+              then handler: (() -> Void)? = nil) {
     self.models = models
     collectionView.reloadData()
+    handler?()
   }
 
   // MARK: - NSCollectionViewDataSource
@@ -75,10 +81,14 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataS
 
     if let view = item as? {{type.name}} {
       {% for variable in type.variables %}
-      {% for key in variable.annotations %}
-        {% for variableType in variable.annotations[key] %}
-      view.{{variable.annotations[key][variableType]}}
+      {% for key, value in variable.annotations %}
+        {% if value.length > 0 %}
+          view.{{key}} = {{value}}
+        {% else %}
+          {% for variableType in value %}
+          view.{{variable.annotations[key][variableType]}}
         {% endfor %}
+        {% endif %}
       {% endfor %}
       {% endfor %}
     }
@@ -89,14 +99,14 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataS
 
 struct {{type.name}}Model: Hashable {
   {% for variable in type.variables %}
-  {% for key in variable.annotations %}
+  {% for key, value in variable.annotations %}
     {% for variableType in variable.annotations[key] %}
-  let {{key}}: {{variableType}}
+  {{key}}: {{variableType}}
     {% endfor %}
   {% endfor %}
   {% endfor %}
   {% for key in type.annotations %}
-  let {{key}}: {{type.annotations[key]}}
+  {{key}}: {{type.annotations[key]}}
   {% endfor %}
 }
 {% endfor %}

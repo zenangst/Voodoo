@@ -34,8 +34,14 @@ class EditorialViewController: UIViewController {
     collectionView.register(EditorialView.self, forCellWithReuseIdentifier: "EditorialView")
   }
 
-  func reload(with models: [EditorialViewModel]) {
-    dataSource.reload(collectionView, with: models)
+  // MARK: - Public API
+
+  func model(at indexPath: IndexPath) -> EditorialViewModel {
+    return dataSource.model(at: indexPath)
+  }
+
+  func reload(with models: [EditorialViewModel], completion: (() -> Void)? = nil) {
+    dataSource.reload(collectionView, with: models, then: completion)
   }
 }
 
@@ -55,9 +61,11 @@ class EditorialDataSource: NSObject, UICollectionViewDataSource {
   }
 
   func reload(_ collectionView: UICollectionView,
-              with models: [EditorialViewModel]) {
+              with models: [EditorialViewModel],
+              then handler: (() -> Void)? = nil) {
     self.models = models
     collectionView.reloadData()
+    handler?()
   }
 
   // MARK: - UICollectionViewDataSource

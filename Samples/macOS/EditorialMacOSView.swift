@@ -1,12 +1,12 @@
 import Cocoa
 
- // sourcery: navigation = "URL"
+ // sourcery: let navigation = "URL"
 class EditorialItem: NSCollectionViewItem, CollectionViewItemComponent, StatefulItem {
-  // sourcery: image: NSImage = "customImageView.image = model.image"
+  // sourcery: let image: NSImage = "customImageView.image = model.image"
   lazy var customImageView = NSImageView()
-  // sourcery: title: String = "titleLabel.stringValue = model.title"
+  // sourcery: let title: String = "titleLabel.stringValue = model.title"
   lazy var titleLabel = NSTextField()
-  // sourcery: subtitle: String = "subtitleLabel.stringValue = model.subtitle"
+  // sourcery: let subtitle: String = "subtitleLabel.stringValue = model.subtitle"
   lazy var subtitleLabel = NSTextField()
 
   private var layoutConstraints = [NSLayoutConstraint]()
