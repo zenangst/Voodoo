@@ -17,12 +17,10 @@ class ViewControllerFactory {
 
     return stateController
   }
-
   public func createEditorialTableViewController() -> EditorialTableViewController {
     let viewController = EditorialTableViewController()
     return viewController
   }
-
   public func createEditorialViewStateController(layout: UICollectionViewFlowLayout,
                                           initialViewController: UIViewController = .init(),
                                           loadingViewController: UIViewController = .init(),
