@@ -82,6 +82,7 @@ class EditorialDataSource: NSObject, UICollectionViewDataSource {
       view.imageView.image = model.image
       view.titleLabel.text = model.title
       view.subtitleLabel.text = model.subtitle
+      view.isEnabled = true
     }
 
     return cell
