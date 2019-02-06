@@ -8,4 +8,6 @@ class EditorialView: UICollectionViewCell, CollectionViewComponent, StatefulView
   lazy var titleLabel = UILabel()
   // sourcery: let subtitle: String = "subtitleLabel.text = model.subtitle"
   lazy var subtitleLabel = UILabel()
+  // sourcery: $RawBinding = "view.isEnabled = true"
+  lazy var isEnabled: Bool = false
 }

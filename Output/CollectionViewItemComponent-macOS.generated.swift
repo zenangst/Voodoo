@@ -82,9 +82,10 @@ class EditorialItemDataSource: NSObject, NSCollectionViewDataSource {
     let model = self.model(at: indexPath)
 
     if let view = item as? EditorialItem {
-          view.customImageView.image = model.image
-          view.titleLabel.stringValue = model.title
-          view.subtitleLabel.stringValue = model.subtitle
+      view.customImageView.image = model.image
+      view.titleLabel.stringValue = model.title
+      view.subtitleLabel.stringValue = model.subtitle
+      view.isEnabled = true
     }
 
     return item
