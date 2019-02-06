@@ -82,13 +82,17 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataS
     if let view = item as? {{type.name}} {
       {% for variable in type.variables %}
       {% for key, value in variable.annotations %}
+      {% ifnot variable|annotated:"$RawBinding" %}
         {% if value.length > 0 %}
-          view.{{key}} = {{value}}
+      view.{{key}} = {{value}}
         {% else %}
           {% for variableType in value %}
-          view.{{variable.annotations[key][variableType]}}
-        {% endfor %}
+      view.{{variable.annotations[key][variableType]}}
+          {% endfor %}
         {% endif %}
+      {% else %}
+      {{ value }}
+      {% endif %}
       {% endfor %}
       {% endfor %}
     }
@@ -99,11 +103,13 @@ class {{type.name|replace:"View",""}}DataSource: NSObject, NSCollectionViewDataS
 
 struct {{type.name}}Model: Hashable {
   {% for variable in type.variables %}
+  {% ifnot variable|annotated:"$RawBinding" %}
   {% for key, value in variable.annotations %}
     {% for variableType in variable.annotations[key] %}
   {{key}}: {{variableType}}
     {% endfor %}
   {% endfor %}
+  {% endif %}
   {% endfor %}
   {% for key in type.annotations %}
   {{key}}: {{type.annotations[key]}}

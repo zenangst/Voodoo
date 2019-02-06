@@ -71,6 +71,10 @@ struct EditorialViewModel: Hashable {
 }
 ```
 
+### View annotations
+
+#### Adding variables to the generated model
+
 If we take a closer look at the annotations:
 
 ```
@@ -79,9 +83,37 @@ If we take a closer look at the annotations:
 
 The first part which acts as the key for the annotation is used to create the model property.
 The latter part is used for data binding, by wrapping it in quotes, we can tailor the
-binding to our needs. If we wanted to use a third-party library or our image data loading
+binding to our needs.
+
+#### Model properties without bindings
+
+In some cases, you want to add additional properties to your model without binding it to your view.
+You can do this by annotating the view rather than the views properties.
+
+```swift
+// sourcery: let navigation = "URL"
+class EditorialView: UICollectionViewCell, CollectionViewComponent {
+  ...
+}
+```
+
+This will add `navigation` of type `URL` to your generated model.
+
+#### Custom bindings that are detached from the view and model
+
+If we wanted to use a third-party library or our image data loading
 class to fetch and display images, we could easily do that across the application by changing
 the sourcery annotation.
+
+You can invoke custom methods by naming your annotation `$RawBinding`. This will tell `Voodoo`
+to use the "raw" value of your annotation without any view or model bindings. Hence it being called
+a raw binding.
+
+```swift
+// sourcery: $RawBinding = "iconStore.loadIcon(for: model.application) { image in view.iconView.image = image }"
+lazy var iconView: NSImageView = .init()
+```
+
 
 By generating code this way, we get a pretty groove side-effect which is dependency containment.
 Changing the annotation and regenerating the component would instantly swap or remove the dependency

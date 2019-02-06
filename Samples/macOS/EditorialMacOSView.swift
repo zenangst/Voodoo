@@ -8,6 +8,8 @@ class EditorialItem: NSCollectionViewItem, CollectionViewItemComponent, Stateful
   lazy var titleLabel = NSTextField()
   // sourcery: let subtitle: String = "subtitleLabel.stringValue = model.subtitle"
   lazy var subtitleLabel = NSTextField()
+  // sourcery: $RawBinding = "view.isEnabled = true"
+  lazy var isEnabled: Bool = false
 
   private var layoutConstraints = [NSLayoutConstraint]()
 }
